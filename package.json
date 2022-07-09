@@ -4,7 +4,7 @@
   "description": "- github actions를 처음 도입할 때 재밌게 해볼 수 있는 소소한 프로젝트.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/www.ts",
+    "start": "NODE_ENV=development nodemon ./src/www.ts",
     "build": "npx tsc"
   },
   "repository": {

@@ -3,6 +3,7 @@ import * as logger from "morgan";
 import * as cors from "cors";
 import ErrorHandler from "./middlewares/ErrorHandler";
 import TodoRoute from "./routes/TodoRoute";
+import "dotenv/config";
 
 const env = process.env.NODE_ENV || "development";
 const app = express();

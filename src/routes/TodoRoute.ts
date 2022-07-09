@@ -13,11 +13,15 @@ export default class TodoRoute {
 
     this.router.get("/", this.findAll);
     this.router.get("/:id", this.findOne);
-    this.router.post("/", this.middleware, this.create);
+    this.router.post("/", this.validationMiddleware, this.create);
     this.router.delete("/:id", this.delete);
   }
 
-  private middleware = (req: Request, res: Response, next: NextFunction) => {
+  private validationMiddleware = (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
     const { content } = req.body;
 
     if (typeof content !== "string" || content.trim().length < 2)

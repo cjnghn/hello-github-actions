@@ -2,6 +2,11 @@
 
 - github actions를 처음 도입할 때 재밌게 해볼 수 있는 소소한 프로젝트.
 
+## TODO
+
+- [ ] crawling project (batch)
+- [ ] aws deploment (ec2, rds)
+
 ## Github Action
 
 - Workflow, Event, Job, Step, Action, Runner 로 이루어짐
@@ -58,7 +63,25 @@ jobs:
 - 위에서 `build`은 특수한 단위가 아닌 하나의 `job` 이름을 의미한다. (변수명)
 - `uses`는 이미 만들어진 액션을 사용하는 명령어이다.
 
-## TODO
+## AWS 배포 준비하기 (feat. AWS CodeDeploy)
 
-- [ ] crawling project (batch)
-- [ ] aws deploment (ec2, rds)
+1. EC2 생성하기 (Allow Http, Https 트래픽. ssh 키 발급)
+2. Elastic IP 생성하고 Instance와 associate
+
+3. nginx 설치하고 방화벽 설정
+
+```
+# EC2 인스턴스에 ssh로 접속
+$ sudo apt update
+$ sudo apt install nginx
+
+$ sudo ufw allow 'Nginx Full'
+$ systemctl status nginx
+```
+
+4. http://<IP주소> 로 접속하여 nginx 설정이 올바르게 됐는지 확인
+5. 3000번 포트에서 돌아가는 express 앱을 80번 포트로 포워딩하기
+
+```
+$ sudo vi /etc/nginx/sites-available/my-app
+```
