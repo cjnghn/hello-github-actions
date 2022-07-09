@@ -10,7 +10,7 @@ if __name__ == "__main__":
     access_token = os.environ["MY_GITHUB_TOKEN"]
     repo_name = "hello-github-actions"
 
-    issue_title = f"오늘의 인기 프로덕트 ({today.year}.{today.month}.{today.day})"
+    issue_title = f"오늘의 인기 프로덕트 ({today.year}.{today.month}.{today.day}.{today.hour})"
     posts = get_disuqiet_posts()
     md_text = parse_posts_to_md(posts)
 
