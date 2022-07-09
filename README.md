@@ -54,6 +54,10 @@ jobs:
           echo test, and deploy your project.
 ```
 
+- 위에 써진대로 job 이 여러개면 기본적으로 병렬로 실행된다.
+- 위에서 `build`은 특수한 단위가 아닌 하나의 `job` 이름을 의미한다. (변수명)
+- `uses`는 이미 만들어진 액션을 사용하는 명령어이다.
+
 ## TODO
 
 - [ ] crawling project (batch)
