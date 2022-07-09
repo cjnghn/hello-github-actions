@@ -2,9 +2,6 @@
 
 - github actions를 처음 도입할 때 재밌게 해볼 수 있는 소소한 프로젝트.
 
-- [ ] crawling project (batch)
-- [ ] aws deploment (ec2, rds)
-
 ## Github Action
 
 - Workflow, Event, Job, Step, Action, Runner 로 이루어짐
@@ -15,3 +12,8 @@
       - Action: Workflow 내의 가장 작은 실행 단위
 - Runner: Github Action Runner 애플리케이션이 설치된, Workflow가 실행될 인스턴스
   - public repo에 한해서 무료로 제공을 해준다 🎉
+
+## TODO
+
+- [ ] crawling project (batch)
+- [ ] aws deploment (ec2, rds)
