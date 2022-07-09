@@ -1,0 +1,191 @@
+query GetPosts(
+  $offset: Int
+  $limit: Int
+  $sortOption: String
+  $type: String
+  $topic: String
+  $makerLogTag: String
+  $makerStatus: String
+  $makerSkill: String
+  $currentEvent: String
+) {
+  posts(
+    offset: $offset
+    limit: $limit
+    sortOption: $sortOption
+    type: $type
+    topic: $topic
+    makerLogTag: $makerLogTag
+    makerStatus: $makerStatus
+    makerSkill: $makerSkill
+    currentEvent: $currentEvent
+  ) {
+    __typename
+    ... on Product {
+      id
+      is_uploader_maker
+      uploader {
+        id
+        display_name
+        profile_image
+        role
+        employer
+        username
+        is_new
+        __typename
+      }
+      url_slug
+      name
+      tagline
+      thumbnail
+      comment_count
+      upvote_count
+      view_count
+      is_upvoted
+      topics {
+        id
+        display_name
+        label
+        icon
+        __typename
+      }
+      upvoters {
+        id
+        username
+        display_name
+        profile_image
+        role
+        employer
+        __typename
+      }
+      created_at
+      approved_at
+      __typename
+    }
+    ... on MakerLog {
+      id
+      user {
+        id
+        display_name
+        profile_image
+        role
+        employer
+        username
+        is_new
+        __typename
+      }
+      title
+      body
+      is_comment_allowed
+      comment_count
+      upvote_count
+      view_count
+      is_upvoted
+      tags {
+        id
+        display_name
+        label
+        __typename
+      }
+      topics {
+        id
+        display_name
+        label
+        icon
+        __typename
+      }
+      upvoters {
+        id
+        username
+        display_name
+        profile_image
+        role
+        employer
+        __typename
+      }
+      visibility_setting {
+        id
+        display_name
+        label
+        __typename
+      }
+      product {
+        id
+        name
+        tagline
+        thumbnail
+        url_slug
+        topics {
+          id
+          display_name
+          label
+          icon
+          __typename
+        }
+        __typename
+      }
+      created_at
+      written_at
+      __typename
+    }
+    ... on Opportunity {
+      id
+      user {
+        id
+        display_name
+        profile_image
+        role
+        employer
+        username
+        is_new
+        __typename
+      }
+      maker_status {
+        id
+        icon
+        display_name
+        label
+        __typename
+      }
+      type
+      title
+      description
+      maker_skills {
+        id
+        icon
+        display_name
+        label
+        __typename
+      }
+      topics {
+        id
+        icon
+        display_name
+        label
+        __typename
+      }
+      product {
+        id
+        name
+        tagline
+        thumbnail
+        url_slug
+        topics {
+          id
+          display_name
+          label
+          icon
+          __typename
+        }
+        __typename
+      }
+      view_count
+      request_count
+      save_count
+      is_saved
+      is_request_sent
+      created_at
+      __typename
+    }
+  }
+}
