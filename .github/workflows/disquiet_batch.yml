@@ -4,7 +4,7 @@ on:
   push:
     branches: ["main", "feature/with-python"]
   schedule:
-    cron: "0 */2 * * *"
+    - cron: "0 */2 * * *"
 
 jobs:
   build:
