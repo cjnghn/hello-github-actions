@@ -1,10 +1,10 @@
 name: disquiet_batch
 
 on:
+  push:
+    branches: ["main", "feature/with-python"]
   schedule:
-    - push:
-      branches: ["main", "feature/with-python"]
-    - cron: "0 */2 * * *"
+    cron: "0 */2 * * *"
 
 jobs:
   build:
