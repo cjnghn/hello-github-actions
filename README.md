@@ -1,5 +1,10 @@
 # hello-github-actions
 
+- github actions를 처음 도입할 때 재밌게 해볼 수 있는 소소한 프로젝트.
+
+- [ ] crawling project (batch)
+- [ ] aws deploment (ec2, rds)
+
 ## Github Action
 
 - Workflow, Event, Job, Step, Action, Runner 로 이루어짐
