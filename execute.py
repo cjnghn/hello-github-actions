@@ -7,7 +7,7 @@ from util import get_github_repo, upload_github_issue
 
 if __name__ == "__main__":
     today = datetime.now()
-    today = today.astimezone(timezone('Asial/Seoul'))
+    today = today.astimezone(timezone('Asia/Seoul'))
 
     access_token = os.environ["MY_GITHUB_TOKEN"]
     repo_name = "hello-github-actions"
