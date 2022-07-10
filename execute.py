@@ -1,11 +1,13 @@
 import os
 
 from datetime import datetime
+from pytz import timezone
 from crawl_disquiet import get_disuqiet_posts, parse_posts_to_md
 from util import get_github_repo, upload_github_issue
 
 if __name__ == "__main__":
     today = datetime.now()
+    today = today.astimezone(timezone('Asial/Seoul'))
 
     access_token = os.environ["MY_GITHUB_TOKEN"]
     repo_name = "hello-github-actions"
